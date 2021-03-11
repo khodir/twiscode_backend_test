@@ -21,8 +21,8 @@ INSERT INTO detail_transaksi VALUES (2, 2, 10000, 2, 20000);
 INSERT INTO detail_transaksi VALUES (3, 2, 2500, 2, 5000);
 
 
-SELECT transaksi.id, transaksi.status_pelunasan status, transaksi.tanggal_pembayaran,
-    SUM(detail_transaksi.sub_total) as total, SUM(detail_transaksi.jumlah_barang) as jumlah_barang
+SELECT transaksi.id, transaksi.status_pelunasan 'status', transaksi.tanggal_pembayaran,
+    SUM(detail_transaksi.sub_total) as 'total', SUM(detail_transaksi.jumlah_barang) as 'jumlah_barang'
 FROM transaksi
 INNER JOIN detail_transaksi ON transaksi.id = detail_transaksi.id_transaksi
 GROUP BY transaksi.id;
